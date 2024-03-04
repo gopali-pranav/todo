@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+:root {
+  --primaryColor: rgba(3, 130, 191, 1);
+  --secondaryColor: rgba(0, 158, 124, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 15px;
+  background: var(--primaryColor);
+  background: linear-gradient(
+    90deg,
+    var(--primaryColor) 0%,
+    var(--secondaryColor) 100%
+  );
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Fredoka", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todoContainer {
+  background-color: white;
+  max-width: 600px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+
+  & .heading {
+    padding-bottom: 15px;
+    border-bottom: 1px dashed rgba(0, 128, 0, 0.287);
+    & h1 {
+      color: green;
+    }
+  }
+
+  & .input {
+    padding: 15px 0;
+    border-bottom: 1px dashed rgba(0, 128, 0, 0.287);
+    & .form {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      & input {
+        padding: 10px 15px;
+        width: 100%;
+        border-radius: 6px;
+        border: 1px solid var(--secondaryColor);
+        outline: none;
+        &:focus {
+          border-color: var(--primaryColor);
+        }
+      }
+      & button {
+        background-color: var(--secondaryColor);
+        padding: 10px 15px;
+        border: none;
+        color: white;
+        font-size: 30px;
+        border-radius: 6px;
+      }
+    }
+  }
+
+  & .list {
+    padding-top: 15px;
+    padding-left: 30px;
+    & ul {
+      list-style: none;
+      & li {
+        font-size: 20px;
+        padding: 10px 15px;
+        position: relative;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &:hover {
+          background-color: rgb(228, 255, 228);
+          cursor: pointer;
+        }
+        & button {
+          background-color: transparent;
+          border: none;
+          font-size: 25px;
+          color: white;
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          background-color: var(--secondaryColor);
+        }
+        &::before {
+          content: "\f249";
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: -30px;
+          font-family: "Line Awesome Free";
+          font-weight: 900;
+          color: var(--secondaryColor);
+        }
+      }
+    }
+  }
+}
